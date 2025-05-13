@@ -1,0 +1,23 @@
+{
+  "name": "connector",
+  "config": {
+    "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
+    "plugin.name": "pgoutput",
+    "database.hostname": "transactions-db",
+    "database.port": "5432",
+    "database.user": "cdc_user",
+    "database.password": "cdc_1234",
+    "database.dbname": "finance_db",
+    "database.server.name": "finance", 
+    "schema.include.list": "operations",
+    "table.include.list": "operations.customers,operations.products,operations.orders,operations.order_items",
+    "publication.name": "cdc_publication",
+    "slot.name": "cdc_pgoutput",         
+    "publication.autocreate.mode": "disabled",
+    "slot.drop.on.stop": "false", 
+    "decimal.handling.mode": "double", 
+    "tombstones.on.delete": "true", 
+    "topic.prefix": "finance",
+    "message.key.columns": "operations.customers:customer_id;operations.products:product_id;operations.orders:order_id;operations.order_items:order_item_id"
+  }
+}   
