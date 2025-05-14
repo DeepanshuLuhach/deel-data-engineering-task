@@ -1,0 +1,284 @@
+{
+    "schema": {
+      "type": "struct",
+      "fields": [
+        {
+          "type": "struct",
+          "fields": [
+            {
+              "type": "int64",
+              "optional": false,
+              "default": 0,
+              "field": "customer_id"
+            },
+            {
+              "type": "string",
+              "optional": false,
+              "field": "customer_name"
+            },
+            {
+              "type": "boolean",
+              "optional": false,
+              "default": true,
+              "field": "is_active"
+            },
+            {
+              "type": "string",
+              "optional": true,
+              "field": "customer_address"
+            },
+            {
+              "type": "int64",
+              "optional": true,
+              "name": "io.debezium.time.Timestamp",
+              "version": 1,
+              "default": 0,
+              "field": "updated_at"
+            },
+            {
+              "type": "int64",
+              "optional": true,
+              "field": "updated_by"
+            },
+            {
+              "type": "int64",
+              "optional": true,
+              "name": "io.debezium.time.Timestamp",
+              "version": 1,
+              "default": 0,
+              "field": "created_at"
+            },
+            {
+              "type": "int64",
+              "optional": true,
+              "field": "created_by"
+            }
+          ],
+          "optional": true,
+          "name": "finance.operations.customers.Value",
+          "field": "before"
+        },
+        {
+          "type": "struct",
+          "fields": [
+            {
+              "type": "int64",
+              "optional": false,
+              "default": 0,
+              "field": "customer_id"
+            },
+            {
+              "type": "string",
+              "optional": false,
+              "field": "customer_name"
+            },
+            {
+              "type": "boolean",
+              "optional": false,
+              "default": true,
+              "field": "is_active"
+            },
+            {
+              "type": "string",
+              "optional": true,
+              "field": "customer_address"
+            },
+            {
+              "type": "int64",
+              "optional": true,
+              "name": "io.debezium.time.Timestamp",
+              "version": 1,
+              "default": 0,
+              "field": "updated_at"
+            },
+            {
+              "type": "int64",
+              "optional": true,
+              "field": "updated_by"
+            },
+            {
+              "type": "int64",
+              "optional": true,
+              "name": "io.debezium.time.Timestamp",
+              "version": 1,
+              "default": 0,
+              "field": "created_at"
+            },
+            {
+              "type": "int64",
+              "optional": true,
+              "field": "created_by"
+            }
+          ],
+          "optional": true,
+          "name": "finance.operations.customers.Value",
+          "field": "after"
+        },
+        {
+          "type": "struct",
+          "fields": [
+            {
+              "type": "string",
+              "optional": false,
+              "field": "version"
+            },
+            {
+              "type": "string",
+              "optional": false,
+              "field": "connector"
+            },
+            {
+              "type": "string",
+              "optional": false,
+              "field": "name"
+            },
+            {
+              "type": "int64",
+              "optional": false,
+              "field": "ts_ms"
+            },
+            {
+              "type": "string",
+              "optional": true,
+              "name": "io.debezium.data.Enum",
+              "version": 1,
+              "parameters": {
+                "allowed": "true,last,false,incremental"
+              },
+              "default": "false",
+              "field": "snapshot"
+            },
+            {
+              "type": "string",
+              "optional": false,
+              "field": "db"
+            },
+            {
+              "type": "string",
+              "optional": true,
+              "field": "sequence"
+            },
+            {
+              "type": "int64",
+              "optional": true,
+              "field": "ts_us"
+            },
+            {
+              "type": "int64",
+              "optional": true,
+              "field": "ts_ns"
+            },
+            {
+              "type": "string",
+              "optional": false,
+              "field": "schema"
+            },
+            {
+              "type": "string",
+              "optional": false,
+              "field": "table"
+            },
+            {
+              "type": "int64",
+              "optional": true,
+              "field": "txId"
+            },
+            {
+              "type": "int64",
+              "optional": true,
+              "field": "lsn"
+            },
+            {
+              "type": "int64",
+              "optional": true,
+              "field": "xmin"
+            }
+          ],
+          "optional": false,
+          "name": "io.debezium.connector.postgresql.Source",
+          "field": "source"
+        },
+        {
+          "type": "struct",
+          "fields": [
+            {
+              "type": "string",
+              "optional": false,
+              "field": "id"
+            },
+            {
+              "type": "int64",
+              "optional": false,
+              "field": "total_order"
+            },
+            {
+              "type": "int64",
+              "optional": false,
+              "field": "data_collection_order"
+            }
+          ],
+          "optional": true,
+          "name": "event.block",
+          "version": 1,
+          "field": "transaction"
+        },
+        {
+          "type": "string",
+          "optional": false,
+          "field": "op"
+        },
+        {
+          "type": "int64",
+          "optional": true,
+          "field": "ts_ms"
+        },
+        {
+          "type": "int64",
+          "optional": true,
+          "field": "ts_us"
+        },
+        {
+          "type": "int64",
+          "optional": true,
+          "field": "ts_ns"
+        }
+      ],
+      "optional": false,
+      "name": "finance.operations.customers.Envelope",
+      "version": 2
+    },
+    "payload": {
+      "before": null,
+      "after": {
+        "customer_id": 4,
+        "customer_name": "Sky Company",
+        "is_active": false,
+        "customer_address": "Rain Forest Street, 1234, Fantasy City, USA",
+        "updated_at": 1747164000048,
+        "updated_by": -1,
+        "created_at": 1747132320021,
+        "created_by": -1
+      },
+      "source": {
+        "version": "3.0.0.Final",
+        "connector": "postgresql",
+        "name": "finance",
+        "ts_ms": 1747164082568,
+        "snapshot": "last_in_data_collection",
+        "db": "finance_db",
+        "sequence": "[null,\"79481088\"]",
+        "ts_us": 1747164082568377,
+        "ts_ns": 1747164082568377000,
+        "schema": "operations",
+        "table": "customers",
+        "txId": 180399,
+        "lsn": 79481088,
+        "xmin": null
+      },
+      "transaction": null,
+      "op": "r",
+      "ts_ms": 1747164082602,
+      "ts_us": 1747164082602496,
+      "ts_ns": 1747164082602496800
+    }
+  }
